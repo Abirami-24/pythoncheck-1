@@ -3,13 +3,13 @@ import datetime
 import pip
 import pkg_resources
 built_in_mod = sys.modules
-
-
+print(built_in_mod.keys())
+print("**")
 pkgs = []
 pkgs1=[]
 
 installed = [pkg.key for pkg in pkg_resources.working_set]
-
+print(installed)
 with open('app.py') as f:
     for lines in f:
         if "import" in lines:
