@@ -3,7 +3,7 @@ import datetime
 import pip
 import pkg_resources
 built_in_mod = sys.modules
-print(built_in_mod.keys())
+#print(built_in_mod.keys())
 '''if "sys" in built_in_mod:
     print("true")'''
 #a=[datetime]
@@ -14,7 +14,7 @@ pkgs = []
 pkgs1=[]
 #print([pip.main(['list'])])
 installed = [pkg.key for pkg in pkg_resources.working_set]
-print(installed)
+#print(installed)
 with open('app.py') as f:
     for lines in f:
         if "import" in lines:
@@ -23,7 +23,7 @@ with open('app.py') as f:
             if tmp[-1].strip() not in built_in_mod and tmp[-1].strip() not in installed:
             #if tmp[-1].strip() not in built_in_mod:
                     pkgs.append((tmp[-1].strip()))
-print(pkgs)
+#print(pkgs)
 #pkgs = set(pkgs)-set(installed)
 #print(list(pkgs))
 for package in pkgs:
