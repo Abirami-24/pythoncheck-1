@@ -3,10 +3,12 @@ node{
      git 'https://github.com/Abirami-24/pythoncheck-1'
    }
    stage('Compile-Package'){
-      sh ' python importmodule.py '
-    
-   }
-   stage('Deploy to Tomcat'){
-      sh ' python app.py'
-}
-}
+       sshagent(credentials : ['privkey']) {
+           
+            sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/autopython/*.py  ec2-user@34.229.235.61:/home/ec2-user/'
+            
+            sh "ssh ec2-user@34.229.235.61 'sudo python importmodule.py' "
+            sh "ssh ec2-user@34.229.235.61 'python app.py'"
+        }
+  }
+ }
