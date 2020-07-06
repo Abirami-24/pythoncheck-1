@@ -1,0 +1,24 @@
+import pip
+if int(pip.__version__.split('.')[0])>9:
+    from pip._internal import main
+else:
+    from pip import main
+def install_and_import(package):
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        #import os
+        #os.system('python -m pip install {}'.format(package))
+        main(['install', package])
+    #finally:
+       # globals()[package] = importlib.import_module(package)
+
+
+with open('app.py') as f:
+    for lines in f:
+        if "import" in lines:
+            tmp = lines.split("import")
+            pack=tmp[-1].strip()
+            install_and_import(pack)  
