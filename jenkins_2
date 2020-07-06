@@ -3,7 +3,7 @@ node{
      git 'https://github.com/Abirami-24/pythoncheck-1'
    }
    stage('Compile-Package'){
-        sh 'sudo python importmodule.py' 
+        sh 'sudo python import2.py' 
          sh 'python app.py'
         
   }
