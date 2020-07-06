@@ -30,4 +30,4 @@ for package in pkgs:
     if package in installed or package.lower() in installed:
             pkgs.remove(package)
             print(pkgs)
-#pip.main(['install'] + pkgs)
+pip.main(['install'] + pkgs)
