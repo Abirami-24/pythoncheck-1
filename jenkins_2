@@ -1,8 +1,5 @@
 import pip
-if int(pip.__version__.split('.')[0])>9:
-    from pip._internal import main
-else:
-    from pip import main
+from pip import main
 def install_and_import(package):
     import importlib
     try:
