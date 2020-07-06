@@ -17,7 +17,7 @@ with open('app.py') as f:
         if "import" in lines:
             tmp = lines.split("import")
             pack=tmp[-1].strip()
-            if pack not in built_in_mod and pack.lower() not in installed:
+            if pack not in builtin_modules and pack.lower() not in installed:
                 install_and_import(pack)  
             else:
                 print("installed lib")
