@@ -9,5 +9,4 @@ node{
    stage('Deploy to Tomcat'){
       sh 'sudo python '
 }
-   
-  
+}
