@@ -5,7 +5,7 @@ def install_and_import(package):
     try:
        importlib.import_module(package)
     except ImportError:
-        main(['install', package])
+        pip.main(['install', package])
     #finally:
        # globals()[package] = importlib.import_module(package)
 
