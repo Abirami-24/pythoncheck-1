@@ -1,4 +1,5 @@
-
+import pip
+from pip._internal import main
 def install_and_import(package):
     import importlib
     try:
