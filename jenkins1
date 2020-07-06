@@ -3,10 +3,10 @@ node{
      git 'https://github.com/Abirami-24/pythoncheck-1'
    }
    stage('Compile-Package'){
-      sh 'sudo python '
+      sh ' python importmodule.py '
     
    }
    stage('Deploy to Tomcat'){
-      sh 'sudo python '
+      sh ' python app.py'
 }
 }
