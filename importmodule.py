@@ -18,9 +18,9 @@ with open('app.py') as f:
             if tmp[-1].strip() not in built_in_mod and (tmp[-1].strip()).lower() not in installed:
                 pkgs.append((tmp[-1].strip()))
 if len(pkgs) is not 0:
-print(pkgs)
-pip.main(['install'] + pkgs)
-print("******************")
+    print(pkgs)
+    pip.main(['install'] + pkgs)
+    print("******************")
 else:
-print("All the Packages are installed...You are Good to go...")
+    print("All the Packages are installed...You are Good to go...")
 
