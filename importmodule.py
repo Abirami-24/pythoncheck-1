@@ -15,7 +15,7 @@ pkgs1=[]
 #print([pip.main(['list'])])
 installed = [pkg.key for pkg in pkg_resources.working_set]
 print(installed)
-with open('C:\Users\user\PycharmProjects\pyprojects\checkpymod.py') as f:
+with open('app.py') as f:
     for lines in f:
         if "import" in lines:
             tmp = lines.split("import")
