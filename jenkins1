@@ -1,0 +1,13 @@
+node{
+   stage('SCM Checkout'){
+     git 'https://github.com/Abirami-24/pythoncheck-1'
+   }
+   stage('Compile-Package'){
+      sh 'sudo python '
+    
+   }
+   stage('Deploy to Tomcat'){
+      sh 'sudo python '
+}
+   
+  
